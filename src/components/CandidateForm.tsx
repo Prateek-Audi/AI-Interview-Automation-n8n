@@ -143,9 +143,11 @@ export function CandidateForm({ webhookUrl, onSubmitSuccess }: CandidateFormProp
         <div className="ml-3">
           <h3 className="text-blue-900">How it works</h3>
           <p className="text-blue-800 mt-1">
-            After submitting your details, our AI will generate a custom questionnaire based on your position. 
-            You'll receive an email with 2 questions to answer. Candidates scoring 12+ out of 20 marks will be shortlisted automatically.
-          </p>
+            After submitting your details, an access code will be generated and sent to your registered email. 
+            Enter this code in the Questionnaire tab to unlock the questions. 
+            Make sure to check your spam folder if you don't see the email.
+            Try to answer the questions in brief and to the point for the best results.
+            </p>
         </div>
       </Alert>
 
