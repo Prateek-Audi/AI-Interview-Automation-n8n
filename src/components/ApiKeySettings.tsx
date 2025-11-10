@@ -12,7 +12,7 @@ import { safeCopyToClipboard, showCopyModal } from '../utils/clipboard';
 export function ApiKeySettings() {
   const [geminiKey, setGeminiKey] = useState('');
   const [webhookUrl, setWebhookUrl] = useState(
-    localStorage.getItem('n8n_webhook_url') || 'https://prateek-audi.app.n8n.cloud/webhook/candidate-interview'
+    localStorage.getItem('n8n_webhook_url') || 'https://prateek1234-audi.app.n8n.cloud/webhook/candidate-interview'
   );
   const [copied, setCopied] = useState(false);
 
@@ -24,7 +24,7 @@ export function ApiKeySettings() {
   const handleCopyGeminiInstructions = async () => {
     const instructions = `GEMINI_API_KEY=${geminiKey || 'YOUR_GEMINI_API_KEY'}`;
     const success = await safeCopyToClipboard(instructions);
-    
+
     if (success) {
       setCopied(true);
       toast.success('Copied to clipboard!');

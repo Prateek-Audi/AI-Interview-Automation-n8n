@@ -5,7 +5,7 @@ import { Badge } from './ui/badge';
 import { Input } from './ui/input';
 import { toast } from 'sonner@2.0.3';
 import { RefreshCw, User, Mail, Briefcase, Award, Search, CheckCircle2, Clock, AlertTriangle } from 'lucide-react';
-import { 
+import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
@@ -44,7 +44,7 @@ export function AdminDashboard() {
     try {
       const apiBaseUrl = (window as any).API_BASE_URL;
       const apiHeaders = (window as any).API_HEADERS;
-      
+
       const response = await fetch(`${apiBaseUrl}/api/candidates`, {
         headers: apiHeaders
       });
@@ -95,7 +95,7 @@ export function AdminDashboard() {
     rejected: candidates.filter(c => c && c.status === 'rejected').length,
     completed: candidates.filter(c => c && c.questionnaireStatus === 'completed').length,
   };
-  
+
   const toggleExpanded = (index: number) => {
     setExpandedCandidates(prev => {
       const newSet = new Set(prev);
@@ -107,7 +107,7 @@ export function AdminDashboard() {
       return newSet;
     });
   };
-  
+
   const getQuestionnaireStatusBadge = (candidate: Candidate) => {
     if (candidate.questionnaireStatus === 'completed') {
       return (
@@ -138,7 +138,7 @@ export function AdminDashboard() {
 
   return (
     <div className="max-w-7xl mx-auto">
-      
+
       {/* Stats Cards */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
         <Card className="p-6">
@@ -210,7 +210,7 @@ export function AdminDashboard() {
                         </Badge>
                         {getQuestionnaireStatusBadge(candidate)}
                       </div>
-                      
+
                       <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 text-sm text-gray-600">
                         <div className="flex items-center gap-2">
                           <Mail className="h-4 w-4" />

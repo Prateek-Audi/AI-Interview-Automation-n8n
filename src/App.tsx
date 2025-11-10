@@ -17,7 +17,7 @@ export default function App() {
   // Load webhook URL from localStorage on mount
   useEffect(() => {
     // Use production webhook URL
-    const productionUrl = 'https://prateek-audi.app.n8n.cloud/webhook/candidate-interview';
+    const productionUrl = 'https://prateek1234-audi.app.n8n.cloud/webhook/candidate-interview';
     setWebhookUrl(productionUrl);
     localStorage.setItem('n8n_webhook_url', productionUrl);
   }, []);
@@ -47,17 +47,17 @@ export default function App() {
         setCurrentView(hash as View);
       }
     };
-    
+
     handleHashChange(); // Check on mount
     window.addEventListener('hashchange', handleHashChange);
-    
+
     return () => window.removeEventListener('hashchange', handleHashChange);
   }, []);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
       <Toaster />
-      
+
       {/* Header */}
       <div className="bg-white border-b border-gray-200 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 py-4">
@@ -70,7 +70,7 @@ export default function App() {
                 Automated candidate screening powered by n8n & Gemini AI
               </p>
             </div>
-            
+
             {/* Navigation Tabs */}
             <div className="flex flex-wrap gap-2">
               <Button
@@ -105,8 +105,8 @@ export default function App() {
       {/* Main Content */}
       <div className="py-12 px-4">
         {currentView === 'form' && (
-          <CandidateForm 
-            webhookUrl={webhookUrl} 
+          <CandidateForm
+            webhookUrl={webhookUrl}
             onSubmitSuccess={handleSubmitSuccess}
           />
         )}
